@@ -1,0 +1,13 @@
+# https://docs.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
+
+GET https://prices.azure.com/api/retail/prices?$filter=productName eq 'Virtual Machines Edsv4 Series' and skuName eq 'E4ds v4' and armRegionName eq 'westeurope' and priceType eq 'Consumption'
+
+###
+
+GET https://prices.azure.com/api/retail/prices?$filter=priceType eq 'Consumption' and armRegionName eq 'westeurope' and serviceName eq 'Compute'
+
+###
+
+GET https://prices.azure.com/api/retail/prices?$filter=startswith(tolower(meterName), 'static public')
+
+###
