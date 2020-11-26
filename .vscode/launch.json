@@ -10,7 +10,7 @@
             "type": "node",
             "program": "mod.ts",
             "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "deno",
+            "runtimeExecutable": "/deno/bin/deno",
             "runtimeArgs": [
                 "run",
                 "--inspect-brk",
@@ -19,7 +19,7 @@
             "outputCapture": "std",
             "args": [
                 "--config",
-                "./configs/worker60-nonha.json"
+                "./configs/sample.json"
             ]
         }
     ]

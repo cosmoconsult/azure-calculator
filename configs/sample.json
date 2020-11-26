@@ -1,0 +1,77 @@
+{
+    "priceConfigs": [
+        {
+            "priceType": "Reservation",
+            "reservationTerm": "1 Year",
+            "description": "Reserved",
+            "armRegionName": "westeurope"
+        },
+        {
+            "priceType": "Consumption",
+            "description": "pay as you go",
+            "armRegionName": "westeurope"
+        }
+    ],
+    "hourFactor": 730,
+    "exchangeRate": 0.843,
+    "resourceConfigs": [
+        {
+            "description": "VMs",
+            "resources": [
+                {
+                    "productName": "Virtual Machines Edsv4 Series",
+                    "skuName": "E4ds v4",
+                    "amount": 2,
+                    "description": "Base scale set"
+                },
+                {
+                    "productName": "Premium SSD Managed Disks",
+                    "skuName": "P10 LRS",
+                    "amount": 2,
+                    "meterName": "P10 Disks",
+                    "priceType": "Consumption",
+                    "description": "OS Disks"
+                },
+                {
+                    "productName": "Premium SSD Managed Disks",
+                    "skuName": "P20 LRS",
+                    "amount": 2,
+                    "meterName": "P20 Disks",
+                    "priceType": "Consumption",
+                    "description": "Data Disk"
+                },
+                {
+                    "productName": "Windows Server",
+                    "skuName": "4 vCPU VM",
+                    "amount": 2,
+                    "optional": true,
+                    "priceType": "Consumption",
+                    "armRegionName": "",
+                    "description": "Windows License"
+                }
+            ]
+        },
+        {
+            "description": "Storage and Public IP",
+            "resources": [
+                {
+                    "productName": "Standard HDD Managed Disks",
+                    "skuName": "S10 LRS",
+                    "amount": 1,
+                    "meterName": "S10 Disks",
+                    "priceType": "Consumption",
+                    "description": "Shared Storage"
+                },
+                {
+                    "productName": "IP Addresses",
+                    "skuName": "Basic",
+                    "armRegionName": "Global",
+                    "amount": 1,
+                    "priceType": "Consumption",
+                    "meterName": "Static Public IP",
+                    "description": "Public IP"
+                }
+            ]
+        }
+    ]
+}
