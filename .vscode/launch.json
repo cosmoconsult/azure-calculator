@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Deno",
+            "name": "Launch Deno with sample config",
             "request": "launch",
             "type": "node",
             "program": "mod.ts",
@@ -20,6 +20,24 @@
             "args": [
                 "--config",
                 "./configs/sample.json"
+            ]
+        },
+        {
+            "name": "Launch Deno with dedicated config",
+            "request": "launch",
+            "type": "node",
+            "program": "mod.ts",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "/deno/bin/deno",
+            "runtimeArgs": [
+                "run",
+                "--inspect-brk",
+                "--allow-all"
+            ],
+            "outputCapture": "std",
+            "args": [
+                "--config",
+                "/host-home-folder/OneDrive - Cosmo Consult AG/cto/devops docker self-service/configs/constant.json"
             ]
         }
     ]
