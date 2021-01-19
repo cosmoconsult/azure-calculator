@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://dev-container+633a5c55736572735c7466656e73746572383938325c4769746875625c617a7572652d63616c63756c61746f72/workspaces/azure-calculator"
+		},
+		{
+			"uri": "vscode-remote://dev-container+633a5c55736572735c7466656e73746572383938325c4769746875625c617a7572652d63616c63756c61746f72/host-home-folder/OneDrive - Cosmo Consult AG/cto/devops docker self-service/configs"
+		}
+	],
+	"remoteAuthority": "dev-container+633a5c55736572735c7466656e73746572383938325c4769746875625c617a7572652d63616c63756c61746f72",
+	"settings": {}
+}
