@@ -8,5 +8,9 @@
 		}
 	],
 	"remoteAuthority": "dev-container+633a5c55736572735c7466656e73746572383938325c4769746875625c617a7572652d63616c63756c61746f72",
-	"settings": {}
+	"settings": {
+		"deno.enable": true,
+		"deno.lint": true,
+		"deno.unstable": true
+	}
 }
