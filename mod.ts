@@ -12,16 +12,16 @@ if (import.meta.main) {
     const config = await Deno.readTextFile(parsedArgs.config)
     const priceRequest: IPriceRequest = JSON.parse(config);
 
-    var results: Result[] = [];
+    const results: Result[] = [];
 
-    for (let priceConfig of priceRequest.priceConfigs) {
+    for (const priceConfig of priceRequest.priceConfigs) {
         const ApiClient: Api = new Api(priceConfig.armRegionName, priceConfig.priceType, priceConfig.reservationTerm);
 
-        for (let resourceConfig of priceRequest.resourceConfigs) {
-            var result = new Result(`${resourceConfig.description} ${priceConfig.description} (${priceConfig.armRegionName} - ${priceConfig.priceType}${priceConfig.reservationTerm !== undefined ? ` ${priceConfig.reservationTerm}` : ''})`, [], 0, 0);
+        for (const resourceConfig of priceRequest.resourceConfigs) {
+            const result = new Result(`${resourceConfig.description} ${priceConfig.description} (${priceConfig.armRegionName} - ${priceConfig.priceType}${priceConfig.reservationTerm !== undefined ? ` ${priceConfig.reservationTerm}` : ''})`, [], 0, 0);
 
-            for (let resource of resourceConfig.resources) {
-                let price = await ApiClient.getPrice(resource);
+            for (const resource of resourceConfig.resources) {
+                const price = await ApiClient.getPrice(resource);
                 if (price !== undefined) {
                     let fullPrice = price.retailPrice * resource.amount * priceRequest.exchangeRate;
                     if (price.reservationTerm === '1 Year')
@@ -36,12 +36,12 @@ if (import.meta.main) {
                         result.totalExcludingOptional += fullPrice;
                     }
                 }
-            };
+            }
             results.push(result);
-        };
-    };
+        }
+    }
 
-    let targetFile = `${parsedArgs.config.substring(0, parsedArgs.config.lastIndexOf("."))}-result.json`
+    const targetFile = `${parsedArgs.config.substring(0, parsedArgs.config.lastIndexOf("."))}-result.json`
     Deno.writeTextFileSync(targetFile, JSON.stringify(results))
     console.info('Done');
 }
