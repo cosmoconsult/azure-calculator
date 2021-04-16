@@ -42,7 +42,7 @@ export class Api {
                 console.error(result);
                 return undefined;
             }
-            let priceList: IPriceList = result;
+            const priceList: IPriceList = result;
             if (priceList.Items?.length != 1) {
                 console.error("Didn't get exactly 1 result as expected: ");
                 console.error(url);
